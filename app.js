@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const transactionRouter = require('./routes/transactions');
 const categoryRouter = require('./routes/categories');
 //const userRouter = require('./routes/users');
-
+const utilisateurRouter = require('./routes/utilisateurs');
 const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
@@ -32,6 +32,6 @@ mongoose.connect('mongodb://localhost:27017/money-manager',
 
 app.use('/api/transaction',transactionRouter);
 app.use('/api/category',categoryRouter);
-
+app.use('/api/utilisateur',utilisateurRouter);
 
 module.exports = app;
